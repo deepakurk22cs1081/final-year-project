@@ -1,0 +1,35 @@
+================================================================================
+FTSE 100 DIRECTION PREDICTION: MODEL COMPARISON REPORT
+================================================================================
+
+QUANTUM CLASSIFIER CONFIGURATION:
+  Qubits: 4
+  Ansatz repetitions: 2
+  Encoding: zz_feature_map
+  Parameters: 8
+
+MODEL PERFORMANCE COMPARISON:
+                     Accuracy  Precision  Recall  F1 Score       AUC    Sharpe    Max DD  Ann. Ret
+VQC (4q, 2r)         0.540830   0.714286  0.2375  0.356473  0.540830 -0.205516 -0.165586 -0.033830
+SVM (RBF)            0.528782   0.630435  0.2900  0.397260  0.578037 -2.408716 -0.618569 -0.268263
+Logistic Regression  0.515395   0.648438  0.2075  0.314394  0.540396  1.160725 -0.137605  0.149930
+Random Forest        0.515395   0.726190  0.1525  0.252066  0.586859 -1.330566 -0.437428 -0.162652
+XGBoost              0.502008   0.689189  0.1275  0.215190  0.514121 -1.231626 -0.436837 -0.152089
+Neural Network       0.497992   0.585034  0.2150  0.314442  0.559986  0.909320 -0.116121  0.113825
+
+BEST MODELS BY METRIC:
+  Accuracy: VQC (4q, 2r) (0.5408)
+  Precision: Random Forest (0.7262)
+  Recall: SVM (RBF) (0.2900)
+  F1 Score: SVM (RBF) (0.3973)
+  AUC: Random Forest (0.5869)
+  Sharpe: Logistic Regression (1.1607)
+  Max DD: Neural Network (-0.1161)
+  Ann. Ret: Logistic Regression (0.1499)
+
+QUANTUM VS CLASSICAL:
+  Best Classical: SVM (RBF) (0.5288)
+  Quantum: VQC (4q, 2r) (0.5408)
+  Result: Quantum OUTPERFORMS by 0.0120 (1.20%)
+
+================================================================================

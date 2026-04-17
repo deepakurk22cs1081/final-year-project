@@ -1,0 +1,38 @@
+======================================================================
+STATISTICAL SIGNIFICANCE REPORT
+======================================================================
+
+95% Bootstrap Confidence Intervals (Accuracy, 1000 resamples):
+Model                         Mean                95% CI
+-------------------------------------------------------
+Logistic Regression       0.5148   [0.4806, 0.5529]
+Random Forest             0.5155   [0.4779, 0.5489]
+XGBoost                   0.5017   [0.4659, 0.5355]
+SVM (RBF)                 0.5286   [0.4926, 0.5636]
+Neural Network            0.4979   [0.4618, 0.5341]
+VQC                       0.5403   [0.5060, 0.5756]
+
+McNemar's Pairwise Tests (H0: identical error patterns):
+Pair                                             p-value   Sig at 0.05?
+------------------------------------------------------------------------
+Logistic Regression vs Random Forest              0.9385             no
+Logistic Regression vs XGBoost                    0.4848             no
+Logistic Regression vs SVM (RBF)                  0.4999             no
+Logistic Regression vs Neural Network             0.2831             no
+Logistic Regression vs VQC                        0.1611             no
+Random Forest vs XGBoost                          0.3019             no
+Random Forest vs SVM (RBF)                        0.4469             no
+Random Forest vs Neural Network                   0.3256             no
+Random Forest vs VQC                              0.1186             no
+XGBoost vs SVM (RBF)                              0.1306             no
+XGBoost vs Neural Network                         0.8763             no
+XGBoost vs VQC                                    0.0236          YES *
+SVM (RBF) vs Neural Network                       0.0368          YES *
+SVM (RBF) vs VQC                                  0.5407             no
+Neural Network vs VQC                             0.0181          YES *
+
+Interpretation:
+  * Significant McNemar's p < 0.05 means error patterns differ.
+  * Non-overlapping CIs = statistically different accuracy.
+  * Overlapping CIs = difference may be due to chance.
+======================================================================

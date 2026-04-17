@@ -1,0 +1,171 @@
+{
+  "bootstrap_ci": {
+    "Logistic Regression": {
+      "mean": 0.5147925033467202,
+      "ci_lower": 0.48058902275769744,
+      "ci_upper": 0.5528781793842035
+    },
+    "Random Forest": {
+      "mean": 0.5154779116465863,
+      "ci_lower": 0.4779116465863454,
+      "ci_upper": 0.5488955823293173
+    },
+    "XGBoost": {
+      "mean": 0.5016559571619813,
+      "ci_lower": 0.46586345381526106,
+      "ci_upper": 0.535475234270415
+    },
+    "SVM (RBF)": {
+      "mean": 0.5286278447121819,
+      "ci_lower": 0.49260374832663995,
+      "ci_upper": 0.5636211512717537
+    },
+    "Neural Network": {
+      "mean": 0.49791298527443106,
+      "ci_lower": 0.46184738955823296,
+      "ci_upper": 0.5341365461847389
+    },
+    "VQC": {
+      "mean": 0.5402918340026773,
+      "ci_lower": 0.5060240963855421,
+      "ci_upper": 0.5756358768406962
+    }
+  },
+  "mcnemar": {
+    "Logistic Regression vs Random Forest": {
+      "p_value": 0.9385028847784713,
+      "chi2": 0.005952380952380952,
+      "significant": false,
+      "n00": 278,
+      "n01": 84,
+      "n10": 84,
+      "n11": 301
+    },
+    "Logistic Regression vs XGBoost": {
+      "p_value": 0.4848423816410664,
+      "chi2": 0.4879518072289157,
+      "significant": false,
+      "n00": 284,
+      "n01": 78,
+      "n10": 88,
+      "n11": 297
+    },
+    "Logistic Regression vs SVM (RBF)": {
+      "p_value": 0.49994358369975456,
+      "chi2": 0.4550561797752809,
+      "significant": false,
+      "n00": 268,
+      "n01": 94,
+      "n10": 84,
+      "n11": 301
+    },
+    "Logistic Regression vs Neural Network": {
+      "p_value": 0.28313087066234666,
+      "chi2": 1.152,
+      "significant": false,
+      "n00": 306,
+      "n01": 56,
+      "n10": 69,
+      "n11": 316
+    },
+    "Logistic Regression vs VQC": {
+      "p_value": 0.16112494928905152,
+      "chi2": 1.9636363636363636,
+      "significant": false,
+      "n00": 270,
+      "n01": 92,
+      "n10": 73,
+      "n11": 312
+    },
+    "Random Forest vs XGBoost": {
+      "p_value": 0.30189844442852753,
+      "chi2": 1.0657894736842106,
+      "significant": false,
+      "n00": 329,
+      "n01": 33,
+      "n10": 43,
+      "n11": 342
+    },
+    "Random Forest vs SVM (RBF)": {
+      "p_value": 0.44687282071083057,
+      "chi2": 0.5785714285714286,
+      "significant": false,
+      "n00": 287,
+      "n01": 75,
+      "n10": 65,
+      "n11": 320
+    },
+    "Random Forest vs Neural Network": {
+      "p_value": 0.32556890113674264,
+      "chi2": 0.9664429530201343,
+      "significant": false,
+      "n00": 294,
+      "n01": 68,
+      "n10": 81,
+      "n11": 304
+    },
+    "Random Forest vs VQC": {
+      "p_value": 0.1185714324443945,
+      "chi2": 2.43609022556391,
+      "significant": false,
+      "n00": 286,
+      "n01": 76,
+      "n10": 57,
+      "n11": 328
+    },
+    "XGBoost vs SVM (RBF)": {
+      "p_value": 0.13064612931172181,
+      "chi2": 2.2848101265822787,
+      "significant": false,
+      "n00": 283,
+      "n01": 89,
+      "n10": 69,
+      "n11": 306
+    },
+    "XGBoost vs Neural Network": {
+      "p_value": 0.8762696636277617,
+      "chi2": 0.024242424242424242,
+      "significant": false,
+      "n00": 291,
+      "n01": 81,
+      "n10": 84,
+      "n11": 291
+    },
+    "XGBoost vs VQC": {
+      "p_value": 0.02359467540178839,
+      "chi2": 5.124183006535947,
+      "significant": true,
+      "n00": 281,
+      "n01": 91,
+      "n10": 62,
+      "n11": 313
+    },
+    "SVM (RBF) vs Neural Network": {
+      "p_value": 0.036784523225775856,
+      "chi2": 4.36036036036036,
+      "significant": true,
+      "n00": 308,
+      "n01": 44,
+      "n10": 67,
+      "n11": 328
+    },
+    "SVM (RBF) vs VQC": {
+      "p_value": 0.5406864402848119,
+      "chi2": 0.3742690058479532,
+      "significant": false,
+      "n00": 262,
+      "n01": 90,
+      "n10": 81,
+      "n11": 314
+    },
+    "Neural Network vs VQC": {
+      "p_value": 0.018092098068004936,
+      "chi2": 5.587209302325581,
+      "significant": true,
+      "n00": 273,
+      "n01": 102,
+      "n10": 70,
+      "n11": 302
+    }
+  }
+}

@@ -1,0 +1,187 @@
+# Experiment Configuration File
+# Define different experimental configurations here
+
+experiments:
+  # Experiment 1: Baseline comparison
+  baseline:
+    description: "Compare VQC with classical methods on 1-day prediction"
+    data:
+      start_date: "2010-01-01"
+      end_date: "2024-12-31"
+      horizon: 1
+      test_size: 0.2
+    quantum:
+      qubits: 4
+      reps: 2
+      encoding: "angle"
+      max_iter: 100
+      optimizer: "COBYLA"
+  
+  # Experiment 2a: 2 qubits
+  ablation_2q:
+    description: "VQC with 2 qubits"
+    data:
+      start_date: "2010-01-01"
+      end_date: "2024-12-31"
+      horizon: 1
+      test_size: 0.2
+    quantum:
+      qubits: 2
+      reps: 2
+      encoding: "angle"
+      max_iter: 100
+      optimizer: "COBYLA"
+  
+  # Experiment 2b: 8 qubits
+  ablation_8q:
+    description: "VQC with 8 qubits (warning: slow!)"
+    data:
+      start_date: "2010-01-01"
+      end_date: "2024-12-31"
+      horizon: 1
+      test_size: 0.2
+    quantum:
+      qubits: 8
+      reps: 2
+      encoding: "angle"
+      max_iter: 50  # Reduced for speed
+      optimizer: "COBYLA"
+  
+  # Experiment 2c: Different circuit depths
+  ablation_depth1:
+    description: "Shallow circuit (1 rep)"
+    data:
+      start_date: "2010-01-01"
+      end_date: "2024-12-31"
+      horizon: 1
+      test_size: 0.2
+    quantum:
+      qubits: 4
+      reps: 1
+      encoding: "angle"
+      max_iter: 100
+      optimizer: "COBYLA"
+  
+  ablation_depth4:
+    description: "Deep circuit (4 reps)"
+    data:
+      start_date: "2010-01-01"
+      end_date: "2024-12-31"
+      horizon: 1
+      test_size: 0.2
+    quantum:
+      qubits: 4
+      reps: 4
+      encoding: "angle"
+      max_iter: 100
+      optimizer: "COBYLA"
+  
+  # Experiment 3: Different prediction horizons
+  horizon_5d:
+    description: "5-day ahead prediction"
+    data:
+      start_date: "2010-01-01"
+      end_date: "2024-12-31"
+      horizon: 5
+      test_size: 0.2
+    quantum:
+      qubits: 4
+      reps: 2
+      encoding: "angle"
+      max_iter: 100
+      optimizer: "COBYLA"
+  
+  horizon_20d:
+    description: "20-day ahead prediction (monthly)"
+    data:
+      start_date: "2010-01-01"
+      end_date: "2024-12-31"
+      horizon: 20
+      test_size: 0.2
+    quantum:
+      qubits: 4
+      reps: 2
+      encoding: "angle"
+      max_iter: 100
+      optimizer: "COBYLA"
+  
+  # Experiment 4: Different optimizers
+  optimizer_spsa:
+    description: "Using SPSA optimizer"
+    data:
+      start_date: "2010-01-01"
+      end_date: "2024-12-31"
+      horizon: 1
+      test_size: 0.2
+    quantum:
+      qubits: 4
+      reps: 2
+      encoding: "angle"
+      max_iter: 150
+      optimizer: "SPSA"
+  
+  # Experiment 5: Recent data only (faster)
+  recent_data:
+    description: "Last 5 years only (for quick testing)"
+    data:
+      start_date: "2019-01-01"
+      end_date: "2024-12-31"
+      horizon: 1
+      test_size: 0.2
+    quantum:
+      qubits: 4
+      reps: 2
+      encoding: "angle"
+      max_iter: 100
+      optimizer: "COBYLA"
+  
+  # Experiment 6: Bull market period
+  bull_market:
+    description: "Bull market period (2010-2019)"
+    data:
+      start_date: "2010-01-01"
+      end_date: "2019-12-31"
+      horizon: 1
+      test_size: 0.2
+    quantum:
+      qubits: 4
+      reps: 2
+      encoding: "angle"
+      max_iter: 100
+      optimizer: "COBYLA"
+  
+  # Experiment 7: COVID period
+  covid_period:
+    description: "COVID and post-COVID (2020-2024)"
+    data:
+      start_date: "2020-01-01"
+      end_date: "2024-12-31"
+      horizon: 1
+      test_size: 0.2
+    quantum:
+      qubits: 4
+      reps: 2
+      encoding: "angle"
+      max_iter: 100
+      optimizer: "COBYLA"
+
+# Recommended sequence for journal paper:
+recommended_sequence:
+  - baseline  # Start here
+  - ablation_2q  # Compare qubit counts
+  - ablation_depth1  # Compare circuit depths
+  - horizon_5d  # Compare prediction horizons
+  - recent_data  # Quick robustness check
+
+# For comprehensive paper:
+comprehensive_sequence:
+  - baseline
+  - ablation_2q
+  - ablation_8q  # Warning: very slow
+  - ablation_depth1
+  - ablation_depth4
+  - horizon_5d
+  - horizon_20d
+  - optimizer_spsa
+  - bull_market
+  - covid_period
